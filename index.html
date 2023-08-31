@@ -1,0 +1,1668 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Finfare</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!-- Reboot -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-reboot@4.5.6/reboot.min.css" rel="stylesheet"> -->
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Cience -->
+    <script src="https://flow.cience.com/s/lib.js" data-key="js.iksx7a8t3vm39zeiekj5xz.avi18x06t568r4q0ju28lg"
+        data-init-only="false" defer></script>
+    <script>window.jitsu = window.jitsu || (function () { (window.jitsuQ = window.jitsuQ || []).push(arguments); })</script>
+
+    <!-- Styles -->
+    <style type="text/css">
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #1A1A1A;
+            font-weight: 300;
+            scroll-behavior: smooth;
+        }
+
+        h1 {
+            font-size: 60px;
+        }
+
+        h2 {
+            font-size: 46px;
+            font-weight: 300;
+        }
+
+        h3 {
+            font-size: 40px;
+            font-weight: 300;
+            line-height: 56px;
+            margin-bottom: 30px;
+        }
+
+        h4 {
+            font-size: 30px;
+            font-weight: 300;
+            line-height: 44px;
+        }
+
+        h5 {
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 50px;
+            color: #fff;
+        }
+
+        p,
+        span {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 28px;
+            color: #828B97;
+        }
+
+        a,
+        a:active,
+        a:visited,
+        a:focused {
+            color: #1A1A1A;
+            text-decoration: none;
+        }
+
+        a:hover {
+            border-bottom: 1px dashed #1A1A1A;
+            text-decoration: none;
+        }
+
+        /* Sections & Spacers */
+        ::selection {
+            background: #01B694;
+            color: #fff;
+        }
+
+        /*      #container {
+        scroll-snap-type: x mandatory;
+      }*/
+
+        /* Anchor Positioning */
+        /*      :target:before {
+      content:"";
+      display:block;
+      height:90px;
+      margin:-90px 0 0;
+      }
+*/
+        /* Buttons */
+        button {
+            background-color: #01B694;
+            font-weight: 300;
+            border: none;
+            border-radius: 10px;
+            padding: 15px 40px;
+            color: #fff;
+        }
+
+        button:active,
+        button:focus,
+        button:hover {
+            transition: 0.2s;
+            background-color: #27C1A4;
+        }
+
+        button span {
+            color: #FFF !important;
+        }
+
+        #cta button {
+            background-color: #ffffff;
+            color: #01B694;
+        }
+
+        #cta button:active,
+        #cta button:focus,
+        #cta button:hover {
+            transition: 0.2s;
+            opacity: 0.8;
+            background-color: #ffffff;
+        }
+
+        /* Nav */
+        #navigation {
+            padding: 20px 0 60px 0;
+            opacity: 0;
+        }
+
+        #navigation ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        #navigation li {
+            display: inline-block;
+            padding: 10px 20px;
+            list-style: none;
+        }
+
+        #navigation li a {
+            color: #1A1A1A;
+            text-decoration: none;
+        }
+
+
+        /* Hero */
+        #hero {
+            aspect-ratio: 2 / 1.3;
+            background: url('assets/images/hero-dashboard.png'), url('assets/images/hero-phone.png'), url('assets/images/hero-card.png'), #fff;
+            background-position: bottom -500px center, top 50px right -500px, top 140px left -500px;
+            background-size: 90% auto, 426px, 311px;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        .heroLoaded {
+            background-position: bottom 0px center, top 50px right -100px, top 140px left -50px !important;
+        }
+
+        .opa,
+        #hero,
+        .heroLoaded,
+        .heroLoaded h1,
+        .heroLoaded h1 span {
+            -webkit-transition: all 0.5s ease-out;
+            -moz-transition: all 0.5s ease-out;
+            -ms-transition: all 0.5s ease-out;
+            -o-transition: all 0.5s ease-out;
+            transition: all 0.5s ease-out;
+            opacity: 1 !important;
+        }
+
+        #hero h1,
+        #hero h1 span {
+            text-align: center;
+            font-size: 56px;
+            font-weight: 300;
+            opacity: 0;
+        }
+
+        #hero h1 span {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-size: 60px;
+            line-height: 90px;
+            font-weight: 500;
+            background: #1EAD89;
+            background: linear-gradient(to right, #1EAD89 0%, #53D58D 34%, #10A8BE 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Three Steps */
+
+        #steps {
+            width: "100%";
+            aspect-ratio: 5 / 2.6;
+            position: relative;
+            background-position: top 0px center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+
+        .active {
+            display: flex !important;
+        }
+
+        #three_steps .title {
+            text-align: center;
+        }
+
+        .title {
+            margin-bottom: 60px;
+        }
+
+        #three_steps .subp,
+        #features .subp {
+            margin: 15px 0 60px 0;
+        }
+
+        #three_steps .img_block {
+            display: flex;
+            background-color: #F9F9F9;
+            border-radius: 40px;
+            padding: 20px;
+            min-height: 500px;
+            max-height: 500px;
+            width: 100%;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        #three_steps .img_block img {
+            display: block;
+            width: auto;
+            max-height: 300px;
+            margin: auto;
+        }
+
+        #three_steps span,
+        #benefits span {
+            color: #01B694;
+            text-align: center;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            text-transform: uppercase;
+        }
+
+        #three_steps p {
+            margin: 30px 0;
+        }
+
+        /* Features */
+        #features,
+        #card {
+            margin-top: 200px;
+        }
+
+        .feat,
+        .showme,
+        .feat,
+        .feat p {
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            -ms-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+        }
+
+        .feat {
+            position: relative;
+            color: #ffffff;
+            border: none;
+            border-radius: 40px;
+            padding: 40px;
+            margin-bottom: calc(var(--bs-gutter-x) * 1);
+            background-repeat: no-repeat !important;
+            transition: all 0.5s ease-in-out !important;
+        }
+
+        .feat p {
+            padding: 0;
+            margin: 0;
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+            max-width: 90%;
+            color: #fff;
+            -webkit-transition: all 0.1s ease-out;
+            -moz-transition: all 0.1s ease-out;
+            -ms-transition: all 0.1s ease-out;
+            -o-transition: all 0.1s ease-out;
+            transition: all 0.1s ease-out;
+        }
+
+        .showme {
+            display: inline-block;
+            opacity: 1 !important;
+        }
+
+        #features_automate {
+            aspect-ratio: 1.26/1;
+            background: url('assets/images/f-automate1.png'), url('assets/images/f-automate2.png'), #0D83FB;
+            background-position: top left -20px, top -75px right -120px;
+            background-size: 210px, 480px;
+        }
+
+        #features_automate .showme {
+            height: 110px !important;
+        }
+
+        #features_automate:hover {
+            background-position: top -50px left -20px, top -125px right -120px;
+        }
+
+        #features_automate .cont {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            text-align: left;
+        }
+
+
+
+        #features_grow {
+            aspect-ratio: 1.26/1;
+            background: url('assets/images/f-grow1.png'), url('assets/images/f-grow2.png'), url('assets/images/f-grow3.png'), #ED5B7B;
+            background-position: top left, bottom -100px right -120px, bottom -220px left -200px;
+            background-size: 250px, 280px, 660px;
+        }
+
+        #features_grow .showme {
+            height: 110px !important;
+        }
+
+        #features_grow:hover {
+            background-position: top -20px left, bottom -150px right -120px, bottom -300px left -200px;
+        }
+
+        #features_grow .cont {
+            position: absolute;
+            top: 30px;
+            right: 35px;
+            text-align: right !important;
+            transition: all 0.2s linear;
+        }
+
+
+
+        #features_track {
+            aspect-ratio: 0.98/1;
+            background: url('assets/images/f-track1.png'), #6260E7;
+            background-position: bottom 40px center;
+            background-size: 530px;
+        }
+
+        #features_track .showme {
+            height: 110px !important;
+        }
+
+        #features_track:hover {
+            background-position: bottom 0px center;
+        }
+
+        #features_track .cont {
+            position: absolute;
+            top: 35px;
+            left: 35px;
+            text-align: left;
+            transition: all 0.2s linear;
+        }
+
+
+
+        #features_personalize {
+            aspect-ratio: 0.97/1;
+            background: url('assets/images/f-personalize2.png'), url('assets/images/f-personalize1.png'), #3A404C;
+            background-position: bottom -120px center, top 0px right -130px;
+            background-size: 530px, 420px;
+        }
+
+        #features_personalize .showme {
+            height: 110px !important;
+        }
+
+        #features_personalize:hover {
+            background-position: bottom -180px center;
+        }
+
+        #features_personalize .cont {
+            position: absolute;
+            top: 35px;
+            left: 35px;
+            text-align: left;
+            transition: all 0.2s linear;
+        }
+
+
+
+        #features_cards {
+            aspect-ratio: 1.17/1;
+            background: url('assets/images/f-cards1.png'), #01B694;
+            background-position: bottom 60px right -30px;
+            background-size: 600px;
+        }
+
+        #features_cards .showme {
+            height: 110px !important;
+        }
+
+        #features_cards:hover {
+            background-position: bottom 0px right -30px;
+        }
+
+        #features_cards .cont {
+            position: absolute;
+            top: 35px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            text-align: center !important;
+            transition: all 0.2s linear;
+        }
+
+
+        #features_earn {
+            aspect-ratio: 1.4/1;
+            background: url('assets/images/f-earn1.png'), url('assets/images/f-earn2.png'), #EE7A40;
+            background-position: top -30px center, top 20px center;
+            background-size: 729px, 484px;
+        }
+
+        #features_earn .showme {
+            height: 110px !important;
+        }
+
+        #features_earn:hover {
+            -webkit-transition: all 0.25s ease-out !important;
+            -moz-transition: all 0.25s ease-out !important;
+            -ms-transition: all 0.25s ease-out !important;
+            -o-transition: all 0.25s ease-out !important;
+            background-position: top -80px center;
+        }
+
+        #features_earn .cont {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            text-align: center;
+            transition: all 0.2s linear;
+        }
+
+
+        #features_earn span {
+            display: block;
+            font-size: 14px;
+            color: #F7C3A9;
+        }
+
+        /* Benefits */
+        #benefits {
+            margin: 260px auto;
+        }
+
+        .benefit {
+            margin-bottom: 60px;
+        }
+
+        .benefit h3,
+        .benefit p {
+            max-width: 550px;
+        }
+
+        #benefits .img_block {
+            background-color: #F9F9F9;
+            max-width: 500px;
+            height: auto;
+            border-radius: 40px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #benefits .img_block img {
+            max-width: 80%;
+            margin: auto
+        }
+
+        /* Solutions */
+        #solutions h2 span {
+            margin-top: 15px;
+            font-size: 46px;
+            display: block;
+            color: #01B694;
+        }
+
+        #solutions p {
+            max-width: 400px;
+            margin-top: 40px;
+        }
+
+        /* Card */
+        #card {
+            width: "100%";
+            aspect-ratio: 5 / 2.6;
+            position: relative;
+            background-position: top 150px center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        #card span {
+            position: absolute;
+            display: block;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0 20px;
+            font-size: 14px;
+            font-style: italic;
+            line-height: 20px;
+        }
+
+        /* CTA */
+        #cta .box {
+            aspect-ratio: 2 / 1;
+            margin: 160px auto 0 auto;
+            border-radius: 40px;
+            background-color: #01B694;
+            padding: 40px;
+            text-align: center;
+            color: #ffffff;
+            background: url('assets/images/cta.png'), #01B694;
+            background-position: bottom -150px center;
+            background-size: 930px;
+            background-repeat: no-repeat;
+            -webkit-transition: all 0.2s ease-out;
+            -moz-transition: all 0.2s ease-out;
+            -ms-transition: all 0.2s ease-out;
+            -o-transition: all 0.2s ease-out;
+            transition: all 0.2s ease-out;
+        }
+
+        #cta .box:hover {
+            background-position: bottom -260px center;
+            background-size: 1200px;
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            -ms-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+        }
+
+        #cta h5 {
+            max-width: 800px;
+            margin: 30px auto 30px auto;
+            line-height: 48px;
+        }
+
+        #cta p {
+            color: #ffffff;
+        }
+
+        /* Footer */
+        #footer .box {
+            margin: 120px auto 20px auto;
+            background-color: #014D3F;
+            border-radius: 40px;
+            padding: 50px 50px 15px 50px;
+        }
+
+        #footer img {
+            max-height: 40px;
+            margin-bottom: 30px;
+        }
+
+        #footer strong {
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        #footer span {
+            display: block;
+            color: #67948C;
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 15px;
+        }
+
+        #footer ul {
+            font-family: 'Roboto', sans-serif;
+            display: inline-block;
+            padding: 10px 20px 0px 20px;
+            list-style: none;
+        }
+
+        #footer ul li {
+            padding-bottom: 14px;
+        }
+
+        #footer ul li a {
+            color: #67948C;
+            text-decoration: none;
+        }
+
+        #footer ul li a:hover {
+            border-color: #67948C;
+        }
+
+        /* Modals */
+        .modal-full {
+            min-width: 100%;
+            margin: 0;
+        }
+
+        .modal-full .modal-content {
+            min-height: 100vh;
+            background-color: #3A404C;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .modal-header {
+            border: none;
+            text-align: center;
+        }
+
+        .modal-header h5 {
+            width: 100%;
+            text-align: center;
+
+            font-size: 42px;
+        }
+
+        .modal-header h5 span {
+            display: block;
+            font-size: 22px;
+            margin: 20px auto 30px auto;
+        }
+
+        .modal-header {
+            position: relative;
+        }
+
+        .modal-header button {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+        }
+
+        .pricingModal h5 {
+            font-size: 56px;
+        }
+
+        .pricebox {
+            background-color: #fff;
+            border-radius: 40px;
+            padding: 20px 30px;
+            color: #3A404C;
+        }
+
+        .pricebox h5 {
+            color: #3A404C;
+            text-align: center;
+        }
+
+        .pricebox .price {
+            text-align: center;
+            margin: 20px auto;
+            font-size: 80px;
+            color: #01B694;
+            font-weight: 500;
+            line-height: 80px;
+        }
+
+        .pricebox .price span {
+            font-weight: 300;
+            font-size: 20px;
+        }
+
+        .pricebox ul {
+            list-style: none;
+            margin: 40px 0 20px 0;
+        }
+
+        .pricebox ul li {
+            margin-bottom: 15px;
+        }
+
+        .pricebox ul li:before {
+            content: '✓';
+            color: #01B694;
+            padding-right: 10px;
+        }
+
+        .pricebox button {
+            width: 100%;
+            margin: 20px auto;
+        }
+
+        .custom .price {
+            font-weight: 300;
+            font-size: 60px;
+        }
+
+
+
+
+
+
+        /* Breakpoints */
+        /* Mobile */
+        @media (max-width: 576px) {
+            /* Global */
+
+            body,
+            html,
+            p,
+            span {
+                font-size: 16px;
+            }
+
+            /* Hs */
+            h1 {}
+
+            h2 {
+                font-size: 30px;
+            }
+
+            h3 {
+                font-size: 22px;
+                font-weight: 400;
+                line-height: 30px;
+                padding-bottom: 10px;
+            }
+
+            h4 {
+                font-size: 22px;
+                font-weight: 400;
+                line-height: 30px;
+                padding-bottom: 10px;
+            }
+
+            h5 {
+                font-size: 18px;
+            }
+
+            #navigation img {
+                max-width: 145px;
+                height: auto;
+            }
+
+            button {
+                padding: 12px 20px;
+            }
+
+            /* Hero */
+            #hero {
+                aspect-ratio: 1/1.6;
+                background: url(assets/images/mobile-card.png), url(assets/images/mobile-phone.png), url(assets/images/mobile-dashboard.png), #fff;
+                background-position: bottom right -590px, bottom left 430px, bottom right 400px;
+                background-size: 220px, 186px, 200%;
+                background-repeat: no-repeat;
+            }
+
+            .heroLoaded {
+                background-position: bottom right -90px, bottom left 30px, bottom right 120% !important;
+            }
+
+            #hero h1 span {
+                font-size: 28px;
+                line-height: 42px;
+            }
+
+            #hero h1 {
+                font-size: 28px;
+                line-height: 42px;
+            }
+
+            /* Three Steps */
+            #three_steps {
+                margin-top: 160px;
+            }
+
+            #three_steps h2 {
+                text-align: left;
+            }
+
+            #three_steps h3 {
+                margin-bottom: 10px;
+            }
+
+            #three_steps p {
+                margin-top: 10px;
+                text-align: left;
+            }
+
+            #three_steps span {
+                display: block;
+                text-align: left;
+                margin: 20px 0;
+            }
+
+            #three_steps button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .active {
+                display: block !important;
+            }
+
+            /* Features */
+
+            #features {
+                margin-top: 160px;
+            }
+
+            #features .showme {
+                height: unset !important;
+            }
+
+            #features .title {
+                margin-bottom: 20px;
+            }
+
+            #features .title h2,
+            #features .title p {
+                text-align: center;
+            }
+
+            #features_automate,
+            #features_automate:hover {
+                aspect-ratio: 1/1.35;
+                background-position: top left -10px, top -85px right -80px;
+                background-size: 140px, 350px;
+            }
+
+            #features_automate .cont {
+                position: relative;
+                top: 100%;
+                transform: translateY(-100%);
+                left: 0;
+            }
+
+            #features_grow,
+            #features_grow:hover {
+                aspect-ratio: 1/1.4;
+                background-position: top right, bottom -100px right -60px, bottom -220px left -200px;
+                background-size: 150px, 190px, 530px;
+            }
+
+            #features_grow .cont {
+                position: relative;
+                top: 0;
+                right: 0;
+            }
+
+            #features_track,
+            #features_track:hover {
+                aspect-ratio: 1/1.3;
+                background-position: bottom -10px center;
+                background-size: 290px;
+            }
+
+            #features_track .cont {
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+
+            #features_personalize,
+            #features_personalize:hover {
+                aspect-ratio: 1/1.3;
+                background-position: bottom -100px center, top 0px right -130px;
+                background-size: 300px, 260px;
+            }
+
+            #features_personalize .cont {
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+
+            #features_cards,
+            #features_cards:hover {
+                aspect-ratio: 1/1.05;
+                background-position: bottom -40px right -30px;
+                background-size: 360px;
+            }
+
+            #features_cards .cont {
+                position: relative;
+                top: 0;
+                left: 0;
+                text-align: left !important;
+            }
+
+            #features_earn,
+            #features_earn:hover {
+                aspect-ratio: 1/1.35;
+                background-position: top -30px center, top 10px center;
+                background-size: 580px, 360px;
+            }
+
+            #features_earn .cont {
+                position: relative;
+                top: 100%;
+                transform: translateY(-100%);
+                left: 0;
+                text-align: left !important;
+            }
+
+            #features_earn em {
+                display: block;
+                font-size: 14px;
+                padding-top: 15px;
+            }
+
+
+            .feat p {
+                display: block;
+                opacity: 1;
+                height: unset;
+                max-width: unset;
+            }
+
+            /* Benefits */
+            #benefits {
+                margin: 130px auto;
+            }
+
+            #benefits h3 {
+                font-size: 22px;
+                margin-bottom: 20px;
+                line-height: unset;
+            }
+
+            #benefits .title {
+                margin-bottom: 20px;
+            }
+
+            #benefits .img_block {
+                margin-bottom: 20px;
+            }
+
+            /* Solutions */
+            #solutions {
+                text-align: center;
+            }
+
+            #solutions h2 {
+                margin-top: 40px;
+                line-height: 30px;
+            }
+
+            #solutions h2 span {
+                font-size: 30px;
+            }
+
+            #solutions p {
+                margin-top: 20px;
+            }
+
+            /* Card */
+            #card {
+                aspect-ratio: 1/1.25;
+                background-position: center bottom 30%;
+                margin-top: 140px;
+            }
+
+            #cta h5 {
+                max-width: 800px;
+                margin: 30px auto 30px auto;
+                line-height: 28px;
+            }
+
+            /* CTA */
+            #cta .box {
+                aspect-ratio: 1/1;
+                background-position: center bottom -110%;
+                background-size: 460px;
+                padding-top: 20px;
+                margin-top: 140px;
+            }
+
+            /* Footer */
+            #footer {
+                text-align: center;
+            }
+
+            #footer .box {
+                margin-top: 100px;
+            }
+
+            #footer ul {
+                padding: 20px 0 0 0;
+            }
+        }
+    </style>
+
+<script type="text/javascript" src="https://tiiny.host/ad-script.js"></script><script defer data-domain="scarlet-hermione-10.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script></head>
+
+<body>
+    <!-- Nav -->
+    <section id="navigation">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <img src="assets/images/logo.svg">
+                </div>
+                <div>
+                    <ul class="d-none d-lg-block">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#pricingModal">Pricing</a></li>
+                        <li><a href="#">Rewards</a></li>
+                        <li><a href="https://finfare.applytojob.com/" target="_blank">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <a href="#">
+                        <button>Request <span class="d-none d-md-inline-block">Early</span> Access</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Hero -->
+    <section id="hero">
+        <div class="container-fluid">
+            <h1>
+                <span>Hello, friendlier finances.</span>
+                Goodbye, old school expense reports.
+            </h1>
+        </div>
+    </section>
+
+    <!-- <section>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1>Hubspot Form</h1>
+              <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+              <script>
+                hbspt.forms.create({
+                  region: "na1",
+                  portalId: "40006502",
+                  formId: "0a4d28d9-6561-4ae3-b27e-17dbba95451b"
+                });
+              </script>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+
+    <!-- 3 Steps -->
+    <section id="three_steps">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h2>Finfare in 3 easy steps</h2>
+                    <p class="subp">Simplify expense management with our user-friendly setup process for optimal
+                        results.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="step_one" class="step align-items-center active" style="display: none;">
+                    <div class="col-12 col-md-6">
+                        <div class="img_block" id="steps">
+                            <!-- <img src="assets/images/steps-phone.png"> -->
+                        </div>
+                    </div>
+                    <div class="d-none d-md-block col-1"></div>
+                    <div class="col-12 col-md-5">
+                        <div>
+                            <span>Step 1</span>
+                            <h3>Create and issue cards with spend limits</h3>
+                            <p>Set individual card limits for each employee or use templates for company-wide
+                                applications. Custom
+                                spend limits allow you to take charge, customize, and issue cards that align with your
+                                business
+                                financial goals, all at your fingertips.</p>
+                            <button class="btn-carousel" type="button">Next Step</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="step_two" class="step align-items-center" style="display: none;">
+                    <div class="col-12 col-md-6">
+                        <div class="img_block">
+                            <img src="assets/images/steps-terminal.png">
+                        </div>
+                    </div>
+                    <div class="d-none d-md-block col-1"></div>
+                    <div class="col-12 col-md-5">
+                        <span>Step 2</span>
+                        <h3>Make purchases with your Finfare card</h3>
+                        <p>Whether you're swiping, tapping, or virtually entering your card information, Finfare charge
+                            card adapts
+                            to your preferences, offering seamless ways to pay that fit your lifestyle and business
+                            needs.</p>
+                        <button class="btn-carousel" type="button">Next Step</button>
+                    </div>
+                </div>
+
+                <div id="step_three" class="step align-items-center" style="display: none;">
+                    <div class="col-12 col-md-6">
+                        <div class="img_block">
+                            <img src="assets/images/steps-devices.png">
+                        </div>
+                    </div>
+                    <div class="d-none d-md-block col-1"></div>
+                    <div class="col-12 col-md-5">
+                        <span>Step 3</span>
+                        <h3>Take a picture of receipt, let Finfare do the rest!</h3>
+                        <p>Wave goodbye to the hassle of manual data entry and hello to a streamlined way of keeping
+                            tabs on your
+                            spending. Just snap a picture of your receipt using your smartphone, and let our technology
+                            do the rest.
+                        </p>
+                        <button class="btn-carousel" type="button">Start Over</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Features -->
+    <section id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h2>Features for <br class="d-inline-block d-md-none"> peace of mind</h2>
+                    <p class="subp">Finfare is packed with features that your business deserves.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div id="features_automate" class="feat">
+                        <div class="cont">
+                            <h4>Automate<br>expense reports</h4>
+                            <p>After making a purchase with your Finfare card, simply capture a photo of the receipt. No
+                                more holding
+                                onto tiny paper receipts or typing tedious expense details into spreadsheets.</p>
+                        </div>
+                    </div>
+
+                    <div id="features_grow" class="feat">
+                        <div class="cont">
+                            <h4>Made for growing businesses.</h4>
+                            <p>A platform that’s easy to learn, onboard, and train others. All the core features you
+                                need for your
+                                growing business with no time wasted navigating features you don’t need.</p>
+                        </div>
+                    </div>
+
+                    <div id="features_track" class="feat">
+                        <div class="cont">
+                            <h4>Track expenses<br>in real-time.</h4>
+                            <p>Get instant visibility of your business expenses in your dashboard. Reviews details in
+                                real-time.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div id="features_personalize" class="feat">
+                        <div class="cont">
+                            <h4>Personalized spend limits.</h4>
+                            <p>Control spend by customizing spend limits and categories for your employees.</p>
+                        </div>
+                    </div>
+
+                    <div id="features_cards" class="feat">
+                        <div class="cont">
+                            <h4>Physical<br>and virtual cards</h4>
+                            <p>Create cards and templates for different types of purchases (subscriptions, bill pay,
+                                supplies, travel,
+                                etc.).</p>
+                        </div>
+                    </div>
+
+                    <div id="features_earn" class="feat">
+                        <div class="cont">
+                            <h4>Earn cash back <span class="d-none d-md-block">* Feature will be added soon</span></h4>
+                            <p>Tap into rewards and cash back deals tailored specifically for businesses. Enjoy perks
+                                from thousands
+                                of merchants and partners in our Finfare Connect network.</p>
+                            <em class="d-inline-block d-md-none">* Feature will be added soon</em>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Benefits -->
+    <section id="benefits">
+        <div class="container">
+            <div class="row title">
+                <div class="col text-center">
+                    <h2>How Finfare will benefit my business?</h2>
+                    <p>We live and breathe small business, delivering results by providing best tools industrywide.</p>
+                </div>
+            </div>
+            <div id="benefits_free" class="benefit">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-5 order-md-last">
+                        <div class="img_block">
+                            <img src="assets/images/b-free.png">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <span>01</span>
+                        <h3>Free to use. Save time and money instantly.</h3>
+                        <p>Experience ultimate convenience with our free tool.<br>Instantly save time and money, making
+                            tasks easier
+                            than ever.</p>
+                    </div>
+                    <div class="d-none d-md-block col-1"></div>
+                </div>
+            </div>
+
+            <div id="benefits_safe" class="benefit">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-5 order-md-last">
+                        <div class="img_block">
+                            <img src="assets/images/b-safe.png">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <span>02</span>
+                        <h3>Secure By Design</h3>
+                        <p>Protected straight out of the box. Experience peace of mind, right from the start, for you,
+                            your
+                            employees and your business.</p>
+                    </div>
+                    <div class="d-none d-md-block col-1"></div>
+                </div>
+            </div>
+
+            <div id="benefits_quick" class="benefit">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-5 order-md-last">
+                        <div class="img_block">
+                            <img src="assets/images/b-quick.png">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <span>03</span>
+                        <h3>Quick to onboard, easy to learn.</h3>
+                        <p>Effortless onboarding, rapid learning curve.<br>Seamlessly integrate and grasp with ease</p>
+                    </div>
+                    <div class="d-none d-md-block col-1"></div>
+                </div>
+            </div>
+
+            <div id="benefits_simple" class="benefit">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-5 order-md-last">
+                        <div class="img_block">
+                            <img src="assets/images/b-simple.png">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <span>04</span>
+                        <h3>Simplify accounting by syncing with Quickbooks</h3>
+                        <p>Simplify accounting tasks through seamless QuickBooks synchronization. Streamline financial
+                            management
+                            effortlessly</p>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+    </section>
+
+
+    <!-- Solutions -->
+    <section id="solutions">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="d-none d-md-block col-1"></div>
+                <div class="col-12 col-md-5">
+                    <img src="assets/images/s-hero-combo.png" class="img-fluid">
+                </div>
+                <div class="d-none d-md-block col-1"></div>
+                <div class="col-12 col-md-5">
+                    <h2>Solutions for <span id="str">Contractors</span></h2>
+                    <p>Simplify accounting tasks through seamless QuickBooks synchronization. Streamline financial
+                        management
+                        effortlessly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Card -->
+    <section id="card">
+        <div class="container">
+            <div class="row title">
+                <div class="col text-center">
+                    <h2>The only card you’ll need.</h2>
+                    <p>Finfare charge card allows you to easily manage all your cards from the single, easy-to-use
+                        interface.<br>Control employee spend and have access to your business finances.</p>
+                    <!-- <span>The Finfare Executive Charge Card is issued by Cross River Bank, Member FDIC, pursuant to a
+                        license from
+                        Mastercard.</span> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section id="cta">
+        <div class="container">
+            <div class="row box">
+                <div class="col text-center">
+                    <h5>Spend less time on expenses, more time growing your business. Sign up in minutes.</h5>
+                    <button>Get Early Access</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <div class="row box">
+                <div class="col-12 col-md-5">
+                    <img src="assets/images/logo-white.png">
+                    <span>The Finfare Executive Charge Card is issued by Cross River Bank, Member FDIC, pursuant to a
+                        license from
+                        Mastercard.</span>
+                    <span>Various trademarks held by their respective owners.</span>
+                    <span>© Copyright 2023 Finfare, Inc. All rights reserved.</span>
+                </div>
+                <div class="d-none d-md-block col-3"></div>
+
+                <div class="col-6 col-md-2">
+                    <ul>
+                        <li><strong>About</strong></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Rewards</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <ul>
+                        <li><strong>Legal</strong></li>
+                        <li><a href="#">Acessibility</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Modal Pricing -->
+    <div class="modal fade" id="pricingModal" tabindex="-1" aria-labelledby="pricingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-full modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="pricingModalLabel">Plans & Pricing <span>Sign up today. Get
+                            started in
+                            minutes.</span></h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-4">
+                            <div class="pricebox">
+                                <h5>Small Business</h5>
+                                <hr>
+                                <p class="price">$0<span>/month</span></p>
+                                <hr>
+                                <ul>
+                                    <li>Automated expense reports</li>
+                                    <li>Up to 25 Card Holders</li>
+                                    <li>Up to maximum of $50,000 monthly expenses</li>
+                                    <li>1.5% cash back, and more rewards from partner merchants</li>
+                                    <li>Physical & virtual cards</li>
+                                    <li>Customizable analytics dashboard in real-time</li>
+                                    <li>QuickBooks accounting integration</li>
+                                </ul>
+                                <button>Request Early Access</button>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="pricebox custom">
+                                <h5>Larger Businesses</h5>
+                                <hr>
+                                <p class="price">Custom</p>
+                                <hr>
+                                <ul>
+                                    <li>Automated expense reports</li>
+                                    <li>25+ Card Holders</li>
+                                    <li>$50,000+ monthly expenses</li>
+                                    <li>1.5% cash back, plus custom perks</li>
+                                    <li>Physical & virtual cards</li>
+                                    <li>Customizable analytics dashboard in real-time</li>
+                                    <li>QuickBooks accounting integration</li>
+                                </ul>
+                                <button>Request Early Access</button>
+                            </div>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+        /* Anchor */
+        $(document).on('click', 'a[href^="#"]', function (event) {
+            event.preventDefault();
+
+            $('html, body').animate({
+                scrollTop: $($.attr(this, 'href')).offset().top - 100
+            }, 100);
+        });
+
+        /* Hero Loaded */
+        window.onload = function () {
+            $('#hero').addClass("heroLoaded");
+            $('#navigation').addClass("opa");
+        }
+
+        /* 3 Steps */
+
+        $(document).ready(function () {
+            $(".active").show();
+            $(".btn-carousel").on('click', function () {
+                var nav;
+                nav = $(".step.active").next('.step');
+                if (nav.length == 0) nav = $(".step").first();
+                $(".step.active").hide();
+                $(".step.active").removeClass("active");
+                nav.addClass("active");
+                nav.fadeIn(1000);
+            });
+        });
+
+        /* Features */
+        $('.feat').hover(function () {
+            $(this).find('.cont').children('p').addClass("showme");
+        },
+            function () {
+                $(this).find('.cont').children('p').removeClass("showme");
+            }
+        );
+
+        /* Solutions */
+        document.addEventListener('DOMContentLoaded', function (event) {
+            // array with texts to type in typewriter
+            var dataText = [
+                "Contractors",
+                "Engineers",
+                "Architectors",
+                "Daycares",
+                "Care Centers",
+                "Private Practice",
+                "Dentists",
+                "Physicians",
+                "Hospitality",
+                "Tour Companies",
+                "Cleaning Services",
+                "Limo Rental",
+                "Event Planning",
+                "Wedding Planners",
+                "Caterers",
+                "Florists",
+                "Business Owners",
+                "Contractors",
+                "Engineers",
+                "Architectors",
+                "Daycares",
+                "Care Centers",
+                "Private Practice",
+                "Dentists",
+                "Physicians",
+                "Hospitality",
+                "Tour Companies",
+                "Cleaning Services",
+                "Limo Rental",
+                "Event Planning",
+                "Wedding Planners",
+                "Caterers",
+                "Florists",
+                "Business Owners"];
+
+            function typeWriter(text, i, fnCallback) {
+                if (i < (text.length)) {
+                    document.querySelector("#str").innerHTML = text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+
+                    setTimeout(function () {
+                        typeWriter(text, i + 1, fnCallback)
+                    }, 90);
+                }
+                else if (typeof fnCallback == 'function') {
+                    setTimeout(fnCallback, 2000);
+                }
+            }
+
+            function StartTextAnimation(i) {
+                if (typeof dataText[i] == 'undefined') {
+                    setTimeout(function () {
+                        StartTextAnimation(0);
+                    }, 20000);
+                }
+
+                // check if dataText[i] exists
+                if (i < dataText.length) {
+                    // text exists! start typewriter animation
+                    typeWriter(dataText[i], 0, function () {
+                        // after callback (and whole text has been animated), start next text
+                        StartTextAnimation(i + 1);
+                    });
+                }
+            }
+            // start the text animation
+            StartTextAnimation(0);
+        });
+    </script>
+
+    <!-- Card Animation -->
+    <script type="text/javascript">
+        const html = document.documentElement;
+        const cards = document.getElementById("card");
+        const storedImages = [];
+        const frameCount = 130;
+
+        const preloadImages = async () => {
+            for (let i = 2; i <= frameCount; i++) {
+                const newImage = new Image();
+                newImage.src = `https://s3.us-west-2.amazonaws.com/cdn.finfare.com/images/cards/${i.toString().padStart(4, '0')}.png`;
+                storedImages.push(newImage);
+            }
+        };
+
+        // Constants for mapping scroll position to x value
+        const xAtTop = 0;
+        const xAtBottom = 130;
+
+        // update background image of div
+        const updateImage = (ind) => {
+            const index = Math.floor((ind - xAtTop) / (xAtBottom - xAtTop) * 150);
+            if (index < storedImages.length && index > -1)
+                cards.style.backgroundImage = `url(${storedImages[index].src})`;
+        }
+
+        const loadAnimation = async () => {
+            await preloadImages();
+            let x = 0;
+            // set listner for scroll
+            window.addEventListener("scroll", () => {
+                // check for div at top
+                const cardsRect = cards.getBoundingClientRect();
+                const scrollPosition = (1 - cardsRect.bottom / window.innerHeight );
+                // const scrollPosition = cardsRect.top / (cardsRect.height - window.innerHeight);
+                x = xAtTop + scrollPosition * (xAtBottom - xAtTop);
+                x = Math.max(xAtTop, Math.min(xAtBottom, x));
+
+                updateImage(x)
+            });
+        };
+
+        loadAnimation();
+    </script>
+
+    <!-- Card Animation -->
+    <script type="text/javascript">
+        const three_steps = document.getElementById("three_steps");
+        const steps = document.getElementById("steps");
+        const storedImages1 = [];
+        const frameCount1 = 407;
+
+        const preloadImages1 = async () => {
+            for (let i = 2; i <= frameCount1; i++) {
+                const newImage1 = new Image();
+                newImage1.src = `https://s3.us-west-2.amazonaws.com/cdn.finfare.com/images/temp1/${i.toString().padStart(4, '0')}.png`;
+                storedImages1.push(newImage1);
+            }
+        };
+
+        // Constants for mapping scroll position to x value
+        const xAtTop1 = 0;
+        const xAtBottom1 = 407;
+
+        // update background image of div
+        const updateImage1 = (ind1) => {
+            const index1 = Math.floor((ind1 - xAtTop1) / (xAtBottom1 - xAtTop1) * 407);
+            if (index1 < storedImages1.length && index1 > -1)
+                steps.style.backgroundImage = `url(${storedImages1[index1].src})`;
+        }
+
+        const loadAnimation1 = async () => {
+            await preloadImages1();
+            let x1 = 0;
+            // set listner for scroll
+            window.addEventListener("scroll", () => {
+                // check for div at top
+                const stepsRect = three_steps.getBoundingClientRect();
+                const scrollPosition1 = (1 - stepsRect.bottom / window.innerHeight );
+                // const scrollPosition1 = stepsRect.top / (stepsRect.height - window.innerHeight);
+                x1 = xAtTop1 + scrollPosition1 * (xAtBottom1 - xAtTop1);
+                x1 = Math.max(xAtTop1, Math.min(xAtBottom1, x1));
+
+                updateImage1(x1)
+            });
+        };
+
+        loadAnimation1();
+    </script>
+
+    <!-- HubSpot -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/40006502.js"></script>
+</body>
+
+</html>
